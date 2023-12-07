@@ -8,16 +8,21 @@ const { app, BrowserWindow } = require('electron/main')
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
-    height: 600
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
 
   win.loadFile('index.html')
+}
 
-  const win2 = new BrowserWindow({
-    width: 800,
-    height: 600
-  })
-  win2.webContents.openDevTools()
+
+  // const win2 = new BrowserWindow({
+  //   width: 800,
+  //   height: 600
+  // })
+  // win2.webContents.openDevTools()
 }
 
 app.whenReady().then(() => {
